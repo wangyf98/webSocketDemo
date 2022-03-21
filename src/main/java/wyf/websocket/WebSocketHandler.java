@@ -3,6 +3,7 @@ package wyf.websocket;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import wyf.config.SpringWebSocketConfigurator;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 
 
-@ServerEndpoint("/websocket/test")
+@ServerEndpoint(value = "/websocket/test",configurator = SpringWebSocketConfigurator.class)
 @Service
 public class WebSocketHandler {
 
