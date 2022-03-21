@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/public'}
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.2'
+    implementation 'org.springframework:spring-websocket:5.3.3'
+    implementation 'com.alibaba:fastjson:1.2.75'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
