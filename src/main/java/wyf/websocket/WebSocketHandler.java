@@ -13,14 +13,14 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.concurrent.ConcurrentHashMap;
 
 
 @ServerEndpoint(value = "/websocket/test",configurator = SpringWebSocketConfigurator.class)
 @Service
 public class WebSocketHandler {
 
-    private final  Map<String, WebSocketHandler> sessionMap = new HashMap<>();
+    private final Map<String, WebSocketHandler> sessionMap = new ConcurrentHashMap<>();
 
     private Session session;
 
